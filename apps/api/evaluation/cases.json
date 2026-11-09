@@ -1,0 +1,92 @@
+[
+  {
+    "id": "context-001",
+    "history": [
+      {"role": "user", "content": "I am studying cellular respiration. Keep explanations concise."},
+      {"role": "assistant", "content": "Understood. I will keep the explanations concise."},
+      {"role": "user", "content": "What is ATP?"},
+      {"role": "assistant", "content": "ATP is the cell's main energy-carrying molecule. Cells can release usable energy when ATP is converted to ADP and phosphate."},
+      {"role": "user", "content": "I also asked about photosynthesis for another class."},
+      {"role": "assistant", "content": "Photosynthesis converts light energy into chemical energy stored in sugars."}
+    ],
+    "parent_index": 3,
+    "anchor_text": "ATP is the cell's main energy-carrying molecule",
+    "question": "What does energy-carrying mean here?",
+    "reference_answer": "It means ATP can transfer usable energy to cellular reactions; ATP hydrolysis to ADP and phosphate releases energy that can drive processes such as transport or synthesis."
+  },
+  {
+    "id": "context-002",
+    "history": [
+      {"role": "user", "content": "I am debugging a Python function that removes duplicates but must preserve order."},
+      {"role": "assistant", "content": "A set can track values already seen, while a list stores first occurrences in order."},
+      {"role": "user", "content": "Why not return list(set(items))?"},
+      {"role": "assistant", "content": "A set does not guarantee the original input order, so converting it to a list can reorder elements."},
+      {"role": "user", "content": "The input can contain unhashable dictionaries."},
+      {"role": "assistant", "content": "Then a set cannot track the dictionaries directly; you need a comparison key or an equality scan."}
+    ],
+    "parent_index": 5,
+    "anchor_text": "cannot track the dictionaries directly",
+    "question": "Why can't a set track them directly?",
+    "reference_answer": "Python dictionaries are mutable and therefore unhashable. Sets require hashable elements, so dictionaries cannot be inserted directly; compare them or derive a stable hashable key."
+  },
+  {
+    "id": "context-003",
+    "history": [
+      {"role": "user", "content": "I am learning HTTP caching. Please distinguish browser cache from shared proxy cache."},
+      {"role": "assistant", "content": "A browser cache is private to one user agent; a shared cache can serve multiple users."},
+      {"role": "user", "content": "What does Cache-Control: private mean?"},
+      {"role": "assistant", "content": "The private directive says a response is intended for a single user and must not be stored by a shared cache."},
+      {"role": "user", "content": "I also need to remember that max-age is measured in seconds."},
+      {"role": "assistant", "content": "Correct: max-age gives the freshness lifetime in seconds."}
+    ],
+    "parent_index": 3,
+    "anchor_text": "must not be stored by a shared cache",
+    "question": "Would my browser still be allowed to cache it?",
+    "reference_answer": "Yes. private prohibits storage by shared caches, but a private cache such as the user's browser may store the response, subject to the other cache directives."
+  },
+  {
+    "id": "context-004",
+    "history": [
+      {"role": "user", "content": "In linear regression, I want intuition for regularization."},
+      {"role": "assistant", "content": "Regularization adds a penalty to the objective to discourage overly complex parameter values."},
+      {"role": "user", "content": "How do L1 and L2 differ?"},
+      {"role": "assistant", "content": "L1 penalizes the sum of absolute coefficient values and can drive some coefficients to zero. L2 penalizes squared coefficients and usually shrinks them smoothly."},
+      {"role": "user", "content": "I use standardized features and care about selecting a smaller set."},
+      {"role": "assistant", "content": "L1 is often useful when sparse feature selection is desired, though correlated features and data conditions affect the result."}
+    ],
+    "parent_index": 3,
+    "anchor_text": "can drive some coefficients to zero",
+    "question": "Why is that useful for feature selection?",
+    "reference_answer": "Zero coefficients remove those features from the fitted linear model, yielding a sparse model. Standardizing features helps make the penalty comparable across differently scaled inputs."
+  },
+  {
+    "id": "context-005",
+    "history": [
+      {"role": "user", "content": "I am learning database indexes. Use the same table example if possible."},
+      {"role": "assistant", "content": "An index is an auxiliary structure that helps locate rows without scanning every row."},
+      {"role": "user", "content": "Use a books table indexed by author."},
+      {"role": "assistant", "content": "For a books table indexed by author, a query filtering on author can use the index to find matching rows efficiently."},
+      {"role": "user", "content": "What is the tradeoff?"},
+      {"role": "assistant", "content": "Indexes take storage and add work to inserts, updates, and deletes because the index must also be maintained."}
+    ],
+    "parent_index": 5,
+    "anchor_text": "must also be maintained",
+    "question": "What specifically must be maintained for the books example?",
+    "reference_answer": "When a book row is inserted, changed, or deleted, the author index entries must be added, updated, or removed to remain consistent with the books table."
+  },
+  {
+    "id": "context-006",
+    "history": [
+      {"role": "user", "content": "I am studying probability. A bag has 3 red and 2 blue balls; draws are without replacement."},
+      {"role": "assistant", "content": "The initial probability of red is 3/5. After a red draw, 2 red and 2 blue remain."},
+      {"role": "user", "content": "What is the probability of two reds in a row?"},
+      {"role": "assistant", "content": "It is (3/5) times (2/4), which equals 3/10."},
+      {"role": "user", "content": "I also study independent coin flips, which are a different setup."},
+      {"role": "assistant", "content": "For a fair coin, successive flips are independent and each has probability 1/2 of heads."}
+    ],
+    "parent_index": 3,
+    "anchor_text": "(3/5) times (2/4)",
+    "question": "Why does the second fraction change?",
+    "reference_answer": "The draws are without replacement. After drawing one red ball, only 2 red balls remain among 4 total balls, so the second red probability is 2/4 rather than 3/5."
+  }
+]

@@ -1,0 +1,8 @@
+# Replace null values with current USD prices per 1M tokens before reporting cost.
+models:
+  your-backend-model:
+    input_usd_per_million: null
+    output_usd_per_million: null
+  your-judge-model:
+    input_usd_per_million: null
+    output_usd_per_million: null
